@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT-like UI</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #chat-container {
+            flex: 1;
+            max-height: calc(100% - 50px); /* Adjusted to make room for the input field */
+            overflow-y: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .user-message {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .ai-message {
+            background-color: #e6f7ff;
+        }
+
+        #user-input {
+            width: calc(100% - 22px);
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            align-self: flex-end; /* Fix input at the bottom */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chat-container">
+        <!-- Chat messages will be appended here dynamically -->
+    </div>
+
+    <input type="text" id="user-input" placeholder="Type your message and press Enter" autocomplete="off">
+
+    <script>
+        document.getElementById("user-input").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+
+            if (userInput.trim() === "") {
+                return;
+            }
+
+            displayMessage("User: " + userInput, "user-message");
+
+            sendToFlaskServer(userInput);
+
+            document.getElementById("user-input").value = "";
+        }
+
+        function sendToFlaskServer(userInput) {
+            $.ajax({
+                url: '/get_response',
+                type: 'POST',
+                contentType: 'application/json;charset=UTF-8',
+                data: JSON.stringify({ message: userInput }),
+                success: function (data) {
+                    displayMessage("AI: " + data.response, "ai-message");
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+
+        function displayMessage(message, messageType) {
+            var chatContainer = document.getElementById("chat-container");
+            var messageElement = document.createElement("div");
+            messageElement.className = "message " + messageType;
+            messageElement.innerHTML = "<p>" + message + "</p>";
+            chatContainer.appendChild(messageElement);
+
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+
+</body>
+</html>

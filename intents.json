@@ -1,0 +1,159 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We sell coffee and tea",
+        "We have coffee and tea"
+      ]
+    },
+
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+    {
+      "tag": "travel_goal",
+      "patterns": [
+      "I want to travel the world but don't know where to invest or save.",
+      "How can I save and invest to travel the world?",
+      "Recommendations for saving and investing for a goal like traveling?"
+  ],
+      "responses": [
+      "Setting a goal to travel the world is fantastic! Let's discuss a personalized financial plan to help you save and invest towards that goal.",
+      "I can provide guidance on creating a financial strategy to make your dream of traveling the world a reality. What's your current financial situation and timeframe for the trip?"
+  ]
+},
+    {
+      "tag": "buying a car",
+      "patterns": [
+        "should i buy this car?",
+        "do this car fit in my budget?",
+        "can i afford this car?",
+        "can i buy this car?",
+        "is it rational to buy this car?"
+      ],
+      "responses": [
+        "As per your income i recommend you should consider buying a car."
+      ]
+    },
+        {
+      "tag": "buying a phone",
+      "patterns": [
+        "should i buy this phone?",
+        "do this phone fit in my budget?",
+        "can i afford this phone?",
+        "can i buy a phone?",
+        "is it rational to buy this phone?"
+      ],
+      "responses": [
+        "As per your income i recommend you should consider buying a phone."
+      ]
+    }
+    ,
+    {
+      "tag": "taking a lone",
+      "patterns": [
+        "should i get a loan?",
+        "can i get a loan?",
+        "do i need a loan?",
+        "do i want a loan?"
+      ],
+      "responses": [
+        "you can get loan against your assets"
+      ]
+    },
+    {
+  "tag": "financial_decision",
+  "patterns": [
+    "How do I know if buying this product is a good financial decision?",
+    "Is this purchase financially wise?",
+    "Can you help me decide if buying this item is a good idea?"
+  ],
+  "responses": [
+    "Sure! I can assist you in evaluating the financial implications of your purchase. Please provide details about the product, its cost, and your overall financial goals."
+  ]
+},
+    {
+  "tag": "loan_evaluation",
+  "patterns": [
+    "What makes a loan a good or bad one?",
+    "Can you recommend a good loan for my needs?",
+    "How to differentiate between good and bad loans?"
+  ],
+  "responses": [
+    "Understanding loans is crucial. I can help you identify the factors that make a loan good or bad. What type of loan are you considering, and for what purpose?"
+  ]
+},
+    {
+  "tag": "sensible_spending",
+  "patterns": [
+    "How much should I spend on a car?",
+    "What's a reasonable budget for a phone?",
+    "Can you advise on sensible spending for different items?"
+  ],
+  "responses": [
+    "Absolutely! I can assist you in determining a sensible budget for various items. Let's discuss your preferences, needs, and overall financial situation."
+  ]
+},
+    {
+      "tag": "loan for car",
+      "patterns": [
+        "should i buy car on loan?",
+        "do i need loan to buy car",
+        "loan for car"
+      ],
+      "responses": [
+        "you can get a loan for by using this rule where 20% is down payment and 5 years is the tenure of loan and emi should not exceed 10% of monthly salary"
+      ]
+    }
+
+
+
+
+  ]
+}
